@@ -2,6 +2,7 @@
 	"name": "react-tailwindcss-portfolio",
 	"version": "0.1.0",
 	"private": true,
+	"homepage": "https://github.com/SSVGLeo/Projet-12.github.io",
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.4.0",
@@ -23,7 +24,9 @@
 		"build": "yarn run react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"build:css": "postcss src/css/tailwind.css -o src/css/main.css"
+		"build:css": "postcss src/css/tailwind.css -o src/css/main.css",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": [
