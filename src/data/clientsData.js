@@ -1,54 +1,54 @@
 // Import images
-import AmazonImage from '../images/brands/amazon_gray.png';
-import SonyImage from '../images/brands/sony_gray.png';
-import AdidasImage from '../images/brands/adidas_gray.png';
-import FilaImage from '../images/brands/fila_gray.png';
-import NBImage from '../images/brands/nb_gray.png';
-import SamsungImage from '../images/brands/samsung_gray.png';
-import CanonImage from '../images/brands/canon_gray.png';
-import PumaImage from '../images/brands/puma_gray.png';
+import HtmlImage from '../images/techs/HTML5_logo_and_wordmark.svg';
+import CSSImage from '../images/techs/CSS3_logo_and_wordmark.svg';
+import JSImage from '../images/techs/javascript-logo-svgrepo-com.svg';
+import ReactImage from '../images/techs/React-icon.svg';
+import NodeImage from '../images/techs/Node.js_logo.svg';
+import NextImage from '../images/techs/Nextjs.svg';
+import MongoImage from '../images/techs/MongoDB-Logo.svg';
+import VScodeImage from '../images/techs/Visualstudio.svg';
 
-export const clientsHeading = 'Some of the brands that trust me';
+export const clientsHeading = "Les langages et frameworks que j'utilise"
 
 export const clientsData = [
 	{
 		id: 1,
-		title: 'Amazon',
-		img: AmazonImage,
+		title: 'Html5',
+		img: HtmlImage,
 	},
 	{
 		id: 2,
-		title: 'Sony',
-		img: SonyImage,
+		title: 'Css3',
+		img: CSSImage,
 	},
 	{
 		id: 3,
-		title: 'Adidas',
-		img: AdidasImage,
+		title: 'JS',
+		img: JSImage,
 	},
 	{
 		id: 4,
-		title: 'FILA',
-		img: FilaImage,
+		title: 'React',
+		img: ReactImage,
 	},
 	{
 		id: 5,
-		title: 'NB',
-		img: NBImage,
+		title: 'Node.js',
+		img: NodeImage,
 	},
 	{
 		id: 6,
-		title: 'SAMSUNG',
-		img: SamsungImage,
+		title: 'Next.js',
+		img: NextImage,
 	},
 	{
 		id: 7,
-		title: 'CANON',
-		img: CanonImage,
+		title: 'MongoDB',
+		img: MongoImage,
 	},
 	{
 		id: 8,
-		title: 'PUMA',
-		img: PumaImage,
+		title: 'Visual Studio Code',
+		img: VScodeImage,
 	},
 ];

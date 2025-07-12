@@ -19,7 +19,7 @@ const ProjectsGrid = () => {
 		<section className="py-5 sm:py-10 mt-5 sm:mt-10">
 			<div className="text-center">
 				<p className="font-general-medium text-2xl sm:text-4xl mb-1 text-ternary-dark dark:text-ternary-light">
-					Projects portfolio
+					Mes projets
 				</p>
 			</div>
 
@@ -33,7 +33,7 @@ const ProjectsGrid = () => {
                         mb-3
                         "
 				>
-					Search projects by title or filter by category
+					Regardez ceux qui vous intéressent !
 				</h3>
 				<div
 					className="
@@ -84,7 +84,7 @@ const ProjectsGrid = () => {
 							name="name"
 							type="search"
 							required=""
-							placeholder="Search Projects"
+							placeholder="Rechercher un projet"
 							aria-label="Name"
 						/>
 					</div>
@@ -101,6 +101,7 @@ const ProjectsGrid = () => {
 								category={project.category}
 								image={project.img}
 								key={project.id}
+								link={project.link}
 							/>
 					  ))
 					: searchProject
@@ -110,6 +111,7 @@ const ProjectsGrid = () => {
 								category={project.category}
 								image={project.img}
 								key={project.id}
+								link={project.link}
 							/>
 					  ))
 					: projects.map((project) => (
@@ -118,6 +120,7 @@ const ProjectsGrid = () => {
 								category={project.category}
 								image={project.img}
 								key={project.id}
+								link={project.link}
 							/>
 					  ))}
 			</div>

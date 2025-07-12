@@ -1,10 +1,14 @@
 export const aboutMeData = [
 	{
 		id: 1,
-		bio: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.',
+		bio: "Après une licence en Langues Etrangères Appliquées et une année en tant que professeur d'anglais, j'ai souhaité changer d'horizons et revenir à ce que j'apprécie le plus : réaliser des projets seul ou accompagné. Depuis l'obtention de mon Baccalauréat en 2021, je n'avais plus codé du tout. Après quatre ans, en repartant de zéro, ce challenge m'a grandement motivé !",
 	},
 	{
 		id: 2,
-		bio: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?',
+		bio: "De janvier 2025 à juillet de la même année j'ai suivi la formation d'intégrateur web d'Openclassrooms. J'ai réalisé douze projets tous aussi intéressants que différents. Du simple projet HTML/CSS jusqu'à la réalisation d'un projet React avec Redux, Router, Next.js en faisant des calls API REST tout en passant par la mise en place d'un projet AGILE.",
+	},
+	{
+		id: 3,
+		bio: "Je suis dès à présent disponible en tant que développeur web Freelance. N'hésitez pas à me contacter pour plus d'informations !",
 	},
 ];
