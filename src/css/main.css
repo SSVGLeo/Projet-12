@@ -280,6 +280,17 @@ summary {
   border-bottom: #3b82f6 1px solid;
 }
 
+/* Modification of the main picture */
+.headerimg {
+  border-radius: 50px;
+  max-width: 100px;
+  max-height: 120px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
 /*
 Removes the default spacing and border for appropriate elements.
 */
@@ -845,8 +856,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 5rem;
 }
 .py-2\.5 {
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
+  padding: 0.625rem;
 }
 .py-6 {
   padding-top: 1.5rem;
@@ -906,8 +916,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2.5rem;
 }
 .text-sm {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   line-height: 1.25rem;
+}
+.text-sm2 {
+  font-size: 0.9rem;
+  line-height: 1.5rem;
 }
 .font-bold {
   font-weight: 700;

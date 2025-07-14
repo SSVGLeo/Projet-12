@@ -48,7 +48,7 @@ const AppFooter = () => {
 					</ul>
 				</div>
 
-				<AppFooterCopyright />
+				{/* <AppFooterCopyright /> */}
 			</div>
 		</div>
 	);

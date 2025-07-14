@@ -46,20 +46,18 @@ const AppHeader = () => {
 				{/* Header menu links and small screen hamburger menu */}
 				<div className="flex justify-between items-center px-4 sm:px-0">
 					<div>
-						<Link to="/Projet-12">
+						<Link to="/Projet-12/">
 							{activeTheme === 'dark' ? (
 								<img
 									src={logoDark}
-									className="w-36"
+									className="headerimg"
 									alt="Dark Logo"
-									style={{borderRadius: '50px'}}
 								/>
 							) : (
 								<img
 									src={logoLight}
-									className="w-36"
+									className="headerimg"
 									alt="Dark Logo"
-									style={{borderRadius: '50px'}}
 								/>
 							)}
 						</Link>
