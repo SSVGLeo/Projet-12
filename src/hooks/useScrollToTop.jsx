@@ -39,6 +39,7 @@ const useScrollToTop = () => {
 				style={{
 					height: 45,
 					width: 45,
+					backgroundColor: '#a8a8a8',
 					borderRadius: 50,
 					right: 50,
 					bottom: 50,

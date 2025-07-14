@@ -46,7 +46,7 @@ const AppHeader = () => {
 				{/* Header menu links and small screen hamburger menu */}
 				<div className="flex justify-between items-center px-4 sm:px-0">
 					<div>
-						<Link to="/">
+						<Link to="/Projet-12">
 							{activeTheme === 'dark' ? (
 								<img
 									src={logoDark}
@@ -133,7 +133,7 @@ const AppHeader = () => {
 					<div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
 						<span
 							onClick={showHireMeModal}
-							className="font-general-medium sm:hidden block text-left text-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-sm px-4 py-2 mt-2 duration-300 w-24"
+							className="font-general-medium sm:hidden block text-left text-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-sm px-4 py-2 mt-2 duration-300 w-28"
 							aria-label="Hire Me Button"
 						>
 							<Button title="Collaborons !" />
@@ -145,21 +145,21 @@ const AppHeader = () => {
 				<div className="font-general-medium hidden m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none">
 					<Link
 						to="/projects"
-						className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
+						className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 headertxt"
 						aria-label="Projects"
 					>
 						Projets
 					</Link>
 					<Link
 						to="/about"
-						className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
+						className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 headertxt"
 						aria-label="About Me"
 					>
 						A propos
 					</Link>
 					<Link
 						to="/contact"
-						className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
+						className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 headertxt"
 						aria-label="Contact"
 					>
 						Contact

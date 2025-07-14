@@ -275,11 +275,14 @@ summary {
   min-height: -webkit-fill-available;
 }
 
+/* Hover for the button on the AppHeader */
+.headertxt:hover {
+  border-bottom: #3b82f6 1px solid;
+}
+
 /*
 Removes the default spacing and border for appropriate elements.
 */
-
-
 
 blockquote,
 dl,
@@ -638,6 +641,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-24 {
   width: 6rem;
+}
+
+.w-28 {
+  width: 8rem;
 }
 .max-w-md {
   max-width: 28rem;
