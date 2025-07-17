@@ -1,26 +1,56 @@
 import Button from "../reusable/Button";
 import FormInput from "../reusable/FormInput";
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const ContactForm = () => {
   const form = useRef();
+  const [statusMessage, setStatusMessage] = useState(null);
+  const [statusType, setStatusType] = useState(null);
+  const [isSending, SetIsSending] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
+	SetIsSending(true);
+
+	const formData = new FormData(form.current);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const subject = formData.get("subject");
+    const message = formData.get("message");
+
+    if (!name || !email || !subject || !message) {
+      setStatusMessage("Veuillez remplir tous les champs.");
+      setStatusType("error");
+	  SetIsSending(false);
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setStatusMessage("Veuillez entrer une adresse email valide.");
+      setStatusType("error");
+	  SetIsSending(false);
+      return;
+    }
 
     emailjs
       .sendForm("service_7flvbg1", "template_a5ughno", form.current, {
         publicKey: "oZ1QqKyEtWEzNKX7f",
       })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        }
-      );
+      .then(() => {
+        console.log("SUCCESS!");
+        setStatusMessage("Message envoyé avec succès !");
+        setStatusType("success");
+        form.current.reset();
+		SetIsSending(false);
+      })
+      .catch((error) => {
+        console.error("FAILED...", error.text);
+        setStatusMessage("Une erreur est survenue. Veuillez réessayer.");
+        setStatusType("error");
+		SetIsSending(false);
+      });
   };
   return (
     <div className="w-full lg:w-1/2">
@@ -79,9 +109,20 @@ const ContactForm = () => {
           </div>
 
           <div className="font-general-medium w-40 px-4 py-2.5 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500">
-            <Button title="Envoyer" type="submit" aria-label="Send Message" />
+            <Button title={isSending ? "Envoi en cours..." : "Envoyer"} disabled={isSending} type="submit" aria-label="Send Message" />
           </div>
         </form>
+        {statusMessage && (
+          <div
+            className={`mt-4 text-sm px-4 py-2 rounded ${
+              statusType === "success"
+                ? "bg-green-100 text-green-700"
+                : "bg-red-100 text-red-700"
+            }`}
+          >
+            {statusMessage}
+          </div>
+        )}
       </div>
     </div>
   );

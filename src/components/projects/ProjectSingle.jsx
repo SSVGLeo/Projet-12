@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
-const ProjectSingle = ({ title, category, image, link }) => {
-  console.log(link, title, category, image);
+const ProjectSingle = ({ title, category, image, onClick }) => {
+  console.log(title, category, image);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -12,29 +12,26 @@ const ProjectSingle = ({ title, category, image, link }) => {
         delay: 0.15,
       }}
     >
-      <div className="rounded-xl shadow-lg hover:shadow-xl mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark card">
+      <div
+        className="rounded-xl shadow-lg hover:shadow-xl mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark card cursor-pointer"
+        onClick={onClick}
+      >
         <div className="card-image">
           <img
             src={image}
-            className="rounded-t-xl border-none"
+            className="rounded-t-xl border-none w-inherit"
             alt="Single Project"
           />
         </div>
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Single Project"
-        >
-          <div className="text-center px-4 py-6">
-            <p className="font-general-medium text-sm text-ternary-dark dark:text-ternary-light mb-2">
-              {title}
-            </p>
-            <span className="text-sm text-ternary-dark dark:text-ternary-light">
-              {category}
-            </span>
-          </div>
-        </a>
+
+        <div className="text-center px-4 pt-3">
+          <p className="font-general-medium text-lg text-ternary-dark dark:text-ternary-light mb-2">
+            {title}
+          </p>
+          <span className="text-sm text-ternary-dark dark:text-ternary-light">
+            {category}
+          </span>
+        </div>
       </div>
     </motion.div>
   );
