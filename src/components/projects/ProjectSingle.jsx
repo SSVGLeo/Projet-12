@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-
+import { useLanguage } from "../../translation/LanguageContext";
 const ProjectSingle = ({ title, category, image, onClick }) => {
-  console.log(title, category, image);
+  const { language } = useLanguage();
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -26,10 +26,10 @@ const ProjectSingle = ({ title, category, image, onClick }) => {
 
         <div className="text-center px-4 pt-3">
           <p className="font-general-medium text-lg text-ternary-dark dark:text-ternary-light mb-2">
-            {title}
+            {typeof title === "string" ? title : title[language]}
           </p>
           <span className="text-sm text-ternary-dark dark:text-ternary-light">
-            {category}
+            {typeof category === "string" ? category : category[language]}
           </span>
         </div>
       </div>

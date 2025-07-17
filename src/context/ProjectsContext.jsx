@@ -1,5 +1,6 @@
 import { useState, createContext } from 'react';
 import { projectsData } from '../data/projects';
+import { useLanguage } from "../translation/LanguageContext";
 
 // Create projects context
 export const ProjectsContext = createContext();
@@ -10,9 +11,11 @@ export const ProjectsProvider = (props) => {
 	const [searchProject, setSearchProject] = useState('');
 	const [selectProject, setSelectProject] = useState('');
 
+	const {language} = useLanguage();
+
 	// Search projects by project title
 	const searchProjectsByTitle = projects.filter((item) => {
-		const result = item.title
+		const result = item.title[language]
 			.toLowerCase()
 			.includes(searchProject.toLowerCase())
 			? item
@@ -22,12 +25,15 @@ export const ProjectsProvider = (props) => {
 		return result;
 	});
 
-	// Select projects by project category
-	const selectProjectsByCategory = projects.filter((item) => {
-		let category =
-			item.category.charAt(0).toUpperCase() + item.category.slice(1);
+	// Filter projects by category
+
+	const selectProjectsByCategory = selectProject === "all" || selectProject === ""
+	? projects
+	: projects.filter((item) => {
+		let category = item.category.charAt(0).toUpperCase() + item.category.slice(1);
 		return category.includes(selectProject);
 	});
+
 
 	return (
 		<ProjectsContext.Provider

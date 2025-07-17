@@ -5,6 +5,8 @@ import { ProjectsContext } from "../../context/ProjectsContext";
 import ProjectsFilter from "./ProjectsFilter";
 import { useState } from "react";
 import ProjectModal from "./ProjectModal";
+import { useLanguage } from "../../translation/LanguageContext";
+import { translations } from "../../translation/translation";
 
 const ProjectsGrid = () => {
   const {
@@ -19,11 +21,13 @@ const ProjectsGrid = () => {
 
   const [selectedProject, setSelectedProject] = useState(null);
 
+  const {language} = useLanguage();
+
   return (
     <section className="py-5 sm:py-10 mt-5 sm:mt-10">
       <div className="text-center">
         <p className="font-general-medium text-2xl sm:text-4xl mb-1 text-ternary-dark dark:text-ternary-light">
-          Mes projets
+          {translations[language].projects.title}
         </p>
       </div>
 
@@ -37,7 +41,7 @@ const ProjectsGrid = () => {
                         mb-3
                         "
         >
-          Regardez ceux qui vous intéressent !
+          {translations[language].projects.description}
         </h3>
         <div
           className="
@@ -88,7 +92,7 @@ const ProjectsGrid = () => {
               name="name"
               type="search"
               required=""
-              placeholder="Rechercher un projet"
+              placeholder={translations[language].projects.research}
               aria-label="Name"
             />
           </div>

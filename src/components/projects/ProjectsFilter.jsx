@@ -1,3 +1,7 @@
+import React from "react";
+import { useLanguage } from "../../translation/LanguageContext";
+import { translations } from "../../translation/translation";
+
 const selectOptions = [
 	'HTML/CSS',
 	'Javascript',
@@ -5,6 +9,7 @@ const selectOptions = [
 ];
 
 const ProjectsFilter = ({ setSelectProject }) => {
+	const {language} = useLanguage();
 	return (
 		<select
 			onChange={(e) => {
@@ -26,8 +31,9 @@ const ProjectsFilter = ({ setSelectProject }) => {
                 dark:text-ternary-light
             "
 		>
-			<option value={setSelectProject} className="text-sm sm:text-md">
-				Tous mes projets
+			{/* {translations[language].projects.category} */}
+			<option value="all" className="text-sm sm:text-md">
+				{translations[language].projects.category}
 			</option>
 
 			{selectOptions.map((option) => (
