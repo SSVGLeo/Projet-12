@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { FiX } from "react-icons/fi";
+import { useLanguage } from "../../translation/LanguageContext";
 
 const ProjectModal = ({ project, onClose }) => {
+  const { language } = useLanguage();
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -21,7 +24,7 @@ const ProjectModal = ({ project, onClose }) => {
               >
                 <FiX />
               </button>
-              <h2 className="text-xl font-bold mb-4 dark:text-ternary-light">{project.title}</h2>
+              <h2 className="text-xl font-bold mb-4 dark:text-ternary-light">{project.title[language]}</h2>
             </div>
             <div className="modal-body p-5 w-full h-full">
               <img
@@ -30,11 +33,11 @@ const ProjectModal = ({ project, onClose }) => {
                 alt="Single Project"
               />
               <p className="text-lg m-4 text-center dark:text-ternary-light">
-                {project.ProjectInfo.ObjectivesDetails}
+                {project.ProjectInfo.ObjectivesDetails[language]}
               </p>
               {project.ProjectInfo.ProjectDetails.map((block) => (
                 <p key={block.id} className="mb-2 text-sm2 text-center dark:text-ternary-light">
-                  {block.details}
+                  {block.details[language]}
                 </p>
               ))}
             </div>
@@ -46,7 +49,7 @@ const ProjectModal = ({ project, onClose }) => {
                   rel="noopener noreferrer"
                   className="px-4 py-2 m-4 bg-blue-600 text-primary-dark rounded-md dark:text-ternary-light hover:bg-indigo-600 hover:text-white transition"
                 >
-                  Voir le site
+                  {project.ProjectInfo.SeeSite[language]}
                 </a>
               )}
               {project.github && (
@@ -56,7 +59,7 @@ const ProjectModal = ({ project, onClose }) => {
                   rel="noopener noreferrer"
                   className="px-4 py-2 m-4 bg-gray-800 text-primary-dark rounded-md dark:text-ternary-light hover:bg-indigo-600 hover:text-white transition"
                 >
-                  Voir le code
+                  {project.ProjectInfo.SeeCode[language]}
                 </a>
               )}
             </div>

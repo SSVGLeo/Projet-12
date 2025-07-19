@@ -26,10 +26,10 @@ const ProjectSingle = ({ title, category, image, onClick }) => {
 
         <div className="text-center px-4 pt-3">
           <p className="font-general-medium text-lg text-ternary-dark dark:text-ternary-light mb-2">
-            {typeof title === "string" ? title : title[language]}
+            {title}
           </p>
           <span className="text-sm text-ternary-dark dark:text-ternary-light">
-            {typeof category === "string" ? category : category[language]}
+            {category}
           </span>
         </div>
       </div>
