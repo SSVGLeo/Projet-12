@@ -3,6 +3,8 @@ import { FiX } from "react-icons/fi";
 import Button from "./reusable/Button";
 import emailjs from "@emailjs/browser";
 import { useState, useRef } from "react";
+import { useLanguage } from "../translation/LanguageContext";
+import { translations } from "../translation/translation";
 
 const selectOptions = ["HTML/CSS", "Javascript", "React"];
 
@@ -10,6 +12,9 @@ const HireMeModal = ({ onClose, onRequest }) => {
   const [statusMessage, setStatusMessage] = useState(null);
   const [statusType, setStatusType] = useState(null);
   const [isSending, SetIsSending] = useState(false);
+
+  const {language} = useLanguage();
+  const t = translations[language].hire.form
 
   const form = useRef();
 
@@ -24,7 +29,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
     const message = formData.get("message");
 
     if (!name || !email || !subject || !message) {
-      setStatusMessage("Veuillez remplir tous les champs.");
+      setStatusMessage(t.fillFields);
       setStatusType("error");
 	  SetIsSending(false);
       return;
@@ -32,7 +37,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      setStatusMessage("Veuillez entrer une adresse email valide.");
+      setStatusMessage(t.validEmail);
       setStatusType("error");
 	  SetIsSending(false);
       return;
@@ -44,14 +49,14 @@ const HireMeModal = ({ onClose, onRequest }) => {
       })
       .then(() => {
         console.log("SUCCESS!");
-        setStatusMessage("Message envoyé avec succès !");
+        setStatusMessage(t.success);
         setStatusType("success");
         form.current.reset();
 		SetIsSending(false);
       })
       .catch((error) => {
         console.error("FAILED...", error.text);
-        setStatusMessage("Une erreur est survenue. Veuillez réessayer.");
+        setStatusMessage(t.error);
         setStatusType("error");
 		SetIsSending(false);
       });
@@ -73,7 +78,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
           <div className="modal max-w-md mx-5 xl:max-w-xl lg:max-w-xl md:max-w-xl bg-secondary-light dark:bg-primary-dark max-h-screen shadow-lg flex-row rounded-lg relative">
             <div className="modal-header flex justify-between gap-10 p-5 border-b border-ternary-light dark:border-ternary-dark">
               <h5 className=" text-primary-dark dark:text-primary-light text-xl">
-                Laissez moi savoir comment je peux vous aider
+                {translations[language].hire.title}
               </h5>
               <button
                 onClick={onClose}
@@ -95,7 +100,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
                     name="name"
                     type="text"
                     required=""
-                    placeholder="Nom"
+                    placeholder= {t.namePlaceholder}
                     aria-label="Name"
                   />
                 </div>
@@ -135,7 +140,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
                     cols="14"
                     rows="6"
                     aria-label="Details"
-                    placeholder="Description de votre projet"
+                    placeholder= {t.messagePlaceholder}
                   ></textarea>
                 </div>
 
@@ -150,11 +155,12 @@ const HireMeModal = ({ onClose, onRequest }) => {
 											bg-indigo-500
 											hover:bg-indigo-600
 											rounded-md
-											focus:ring-1 focus:ring-indigo-900 duration-500"
+											focus:ring-1 focus:ring-indigo-900 duration-500
+                      cursor-pointer"
                     aria-label="Submit Request"
                   >
                     <Button
-                      title={isSending ? "Envoi en cours..." : "Envoyer"}
+                      title={isSending ? t.sending : t.send}
                       disabled={isSending}
                       type="submit"
                       aria-label="Send Message"
@@ -185,7 +191,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
 									focus:ring-1 focus:ring-indigo-900 duration-500"
                 aria-label="Close Modal"
               >
-                <Button title="Fermer" />
+                <Button title= {translations[language].hire.close} />
               </span>
             </div>
           </div>
