@@ -1,43 +1,78 @@
 export const translations = {
-    fr: {
-      projects: {
-        title: "Mes projets",
-        description: "Regardez ceux qui vous intéressent !",
-        research: "Rechercher un projet",
-        category: "Tous mes projets",
-      },
-      header: {
-        project: "Projets",
-        about: "A propos",
-        hire: "Collaborons !",
-      },
-      footer: {
-        text: "Retrouvez moi sur :",
-      },
-      home: {
-        description: "Développeur web en reconvertion !",
-        cv: "Download my CV",
-      }
+  fr: {
+    projects: {
+      title: "Mes projets",
+      description: "Regardez ceux qui vous intéressent !",
+      research: "Rechercher un projet",
+      category: "Tous mes projets",
     },
-    en: {
-      projects: {
-        title: "My projects",
-        description: "Check out those that interest you !",
-        research: "Search a project",
-        category: "All my projects",
+    header: {
+      project: "Projets",
+      about: "A propos",
+      hire: "Contact",
+    },
+    footer: {
+      text: "Retrouvez moi sur :",
+    },
+    home: {
+      description: "Développeur web en reconvertion !",
+      cv: "Download my CV",
+    },
+    contact: {
+      details: "Pour me contacter :",
+      form: {
+        namePlaceholder: "Votre NOM et Prénom",
+        emailPlaceholder: "Votre adresse mail",
+        subjectPlaceholder: "Objet de votre message",
+        main: "Formulaire de contact",
+        name: "NOM Prénom",
+        email: "Email",
+        subject: "Objet",
+        sending: "Envoi en cours...",
+        send: "Envoyer",
+        fillFields: "Veuillez remplir tous les champs.",
+        validEmail: "Veuillez entrer une adresse email valide.",
+        success: "Message envoyé avec succès !",
+        error: "Une erreur est survenue. Veuillez réessayer.",
       },
-      header: {
-        project: "Projects",
-        about: "About",
-        hire: "Hire me",
+    },
+  },
+  en: {
+    projects: {
+      title: "My projects",
+      description: "Check out those that interest you !",
+      research: "Search a project",
+      category: "All my projects",
+    },
+    header: {
+      project: "Projects",
+      about: "About",
+      hire: "Hire me",
+    },
+    footer: {
+      text: "You can find me on:",
+    },
+    home: {
+      description: "Retraining web developer !",
+      cv: "Download my CV",
+    },
+    contact: {
+      details: "Contact me at :",
+      form: {
+        namePlaceholder: "Your full name",
+        emailPlaceholder: "Your email",
+        subjectPlaceholder: "Message subject",
+        main: "Contact form",
+        name: "Full name",
+        email: "Email",
+        subject: "Subject",
+        sending: "Sending...",
+        send: "Send",
+        fillFields: "Please fill in all fields.",
+        validEmail: "Please enter a valid email address.",
+        success: "Message sent successfully!",
+        error: "An error occurred. Please try again.",
       },
-      footer: {
-        text: "You can find me on:",
-      },
-      home: {
-        description: "Retraining web developer !",
-        cv: "Download my CV",
-      }
-    }
-  };
-  
+    },
+  },
+};

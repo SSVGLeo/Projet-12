@@ -2,12 +2,16 @@ import Button from "../reusable/Button";
 import FormInput from "../reusable/FormInput";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
+import { useLanguage } from "../../translation/LanguageContext";
+import { translations } from "../../translation/translation";
 
 const ContactForm = () => {
   const form = useRef();
   const [statusMessage, setStatusMessage] = useState(null);
   const [statusType, setStatusType] = useState(null);
   const [isSending, SetIsSending] = useState(false);
+  const {language} = useLanguage();
+  const t = translations[language].contact.form
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -20,7 +24,7 @@ const ContactForm = () => {
     const message = formData.get("message");
 
     if (!name || !email || !subject || !message) {
-      setStatusMessage("Veuillez remplir tous les champs.");
+      setStatusMessage(t.fillFields);
       setStatusType("error");
 	  SetIsSending(false);
       return;
@@ -28,7 +32,7 @@ const ContactForm = () => {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      setStatusMessage("Veuillez entrer une adresse email valide.");
+      setStatusMessage(t.validEmail);
       setStatusType("error");
 	  SetIsSending(false);
       return;
@@ -40,14 +44,14 @@ const ContactForm = () => {
       })
       .then(() => {
         console.log("SUCCESS!");
-        setStatusMessage("Message envoyé avec succès !");
+        setStatusMessage(t.success);
         setStatusType("success");
         form.current.reset();
 		SetIsSending(false);
       })
       .catch((error) => {
         console.error("FAILED...", error.text);
-        setStatusMessage("Une erreur est survenue. Veuillez réessayer.");
+        setStatusMessage(t.error);
         setStatusType("error");
 		SetIsSending(false);
       });
@@ -61,7 +65,7 @@ const ContactForm = () => {
           className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
         >
           <p className="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8">
-            Formulaire de contact
+            {translations[language].contact.details}
           </p>
           <FormInput
             inputLabel="NOM Prénom"
@@ -69,7 +73,7 @@ const ContactForm = () => {
             inputType="text"
             inputId="name"
             inputName="name"
-            placeholderText="Votre NOM et Prénom"
+            placeholderText={t.namePlaceholder}
             ariaLabelName="Name"
           />
           <FormInput
@@ -78,7 +82,7 @@ const ContactForm = () => {
             inputType="email"
             inputId="email"
             inputName="email"
-            placeholderText="Votre adresse mail"
+            placeholderText={t.emailPlaceholder}
             ariaLabelName="Email"
           />
           <FormInput
@@ -87,7 +91,7 @@ const ContactForm = () => {
             inputType="text"
             inputId="subject"
             inputName="subject"
-            placeholderText="Objet de votre message"
+            placeholderText={t.subjectPlaceholder}
             ariaLabelName="Subject"
           />
 
@@ -109,7 +113,7 @@ const ContactForm = () => {
           </div>
 
           <div className="font-general-medium w-40 px-4 py-2.5 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500">
-            <Button title={isSending ? "Envoi en cours..." : "Envoyer"} disabled={isSending} type="submit" aria-label="Send Message" />
+            <Button title={isSending ? t.sending : t.send} disabled={isSending} type="submit" aria-label="Send Message" />
           </div>
         </form>
         {statusMessage && (

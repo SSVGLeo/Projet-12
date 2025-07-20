@@ -1,9 +1,11 @@
 import profileImage from '../../images/Leobio.png';
 import { useContext } from 'react';
 import AboutMeContext from '../../context/AboutMeContext';
+import { useLanguage } from "../../translation/LanguageContext";
 
 const AboutMeBio = () => {
 	const { aboutMe } = useContext(AboutMeContext);
+	const {language} = useLanguage();
 
 	return (
 		<div className="block sm:flex sm:gap-10 mt-10 sm:mt-20">
@@ -17,7 +19,7 @@ const AboutMeBio = () => {
 						className="mb-4 text-ternary-dark dark:text-ternary-light text-lg"
 						key={bio.id}
 					>
-						{bio.bio}
+						{bio.bio[language]}
 					</p>
 				))}
 			</div>

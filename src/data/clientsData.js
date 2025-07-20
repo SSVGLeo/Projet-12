@@ -8,7 +8,10 @@ import NextImage from '../images/techs/Nextjs.svg';
 import MongoImage from '../images/techs/MongoDB-Logo.svg';
 import VScodeImage from '../images/techs/Visualstudio.svg';
 
-export const clientsHeading = "Les langages et frameworks que j'utilise"
+export const clientsHeading = {
+	fr: "Les langages et frameworks que j'utilise",
+	en: "Languages and frameworks I use",
+};
 
 export const clientsData = [
 	{

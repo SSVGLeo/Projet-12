@@ -1,4 +1,6 @@
 import { FiPhone, FiMapPin, FiMail } from 'react-icons/fi';
+import { useLanguage } from "../../translation/LanguageContext";
+import { translations } from "../../translation/translation";
 
 const contacts = [
 	{
@@ -19,11 +21,13 @@ const contacts = [
 ];
 
 const ContactDetails = () => {
+	const {language} = useLanguage();
+
 	return (
 		<div className="w-full lg:w-1/2">
 			<div className="text-left max-w-xl px-6">
 				<h2 className="font-general-medium text-2xl text-primary-dark dark:text-primary-light mt-12 mb-8">
-					Pour me contacter :
+					{translations[language].contact.details}
 				</h2>
 				<ul className="font-general-regular">
 					{contacts.map((contact) => (
