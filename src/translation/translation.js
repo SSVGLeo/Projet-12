@@ -12,10 +12,10 @@ export const translations = {
       hire: "Contact",
     },
     footer: {
-      text: "Retrouvez moi sur :",
+      text: "Retrouvez-moi sur :",
     },
     home: {
-      description: "Développeur web en reconvertion !",
+      description: "Développeur web en reconversion !",
       cv: "Download my CV",
     },
     contact: {

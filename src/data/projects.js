@@ -25,14 +25,14 @@ export const projectsData = [
 				en: "The code",
 			},
 			ObjectivesDetails: {
-				fr: "Ce projet à pour but d'initer au framework React et la notion de développement orienté objet via les composents.",
+				fr: "Ce projet à pour but d'initier au framework React et la notion de développement orienté objet via les composants.",
 				en : "This project's goal is to introduce the React framework and the concept of object-oriented development through components.",
 			}, 
 			ProjectDetails: [
 				{
 					id: 1,
 					details: {
-						fr: "Utilisations de composents réutilisables et de props.",
+						fr: "Utilisation de composants réutilisables et de props.",
 						en: "Use of reusable components and props.",
 					} 
 				},
