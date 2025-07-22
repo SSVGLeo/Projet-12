@@ -17,6 +17,8 @@ const AppHeader = () => {
 
   const { language, toggleLanguage } = useLanguage();
 
+  const MotionHeader = motion.header;
+
   function toggleMenu() {
     if (!showMenu) {
       setShowMenu(true);
@@ -40,7 +42,7 @@ const AppHeader = () => {
   }
 
   return (
-    <motion.nav
+    <MotionHeader
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       id="nav"
@@ -207,7 +209,7 @@ const AppHeader = () => {
         ) : null}
         {showModal ? showHireMeModal : null}
       </div>
-    </motion.nav>
+    </MotionHeader>
   );
 };
 

@@ -35,9 +35,10 @@ function App() {
                 <Route path="contact" element={<Contact />} />
               </Routes>
             </Suspense>
+            <UseScrollToTop />
             <AppFooter />
           </Router>
-          <UseScrollToTop />
+          
         </div>
       </LanguageProvider>
     </AnimatePresence>

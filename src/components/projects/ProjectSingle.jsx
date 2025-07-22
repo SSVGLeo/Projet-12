@@ -23,11 +23,11 @@ const ProjectSingle = ({ title, category, image, onClick }) => {
         </div>
 
         <div className="text-center px-4 pt-3">
-          <p className="font-general-medium text-lg text-ternary-dark dark:text-ternary-light mb-2">
+          <h4 className="font-general-medium text-lg text-ternary-dark dark:text-ternary-light mb-2">
             {title}
-          </p>
+          </h4>
           <span className="text-sm text-ternary-dark dark:text-ternary-light">
-            {category}
+            <p>{category}</p>
           </span>
         </div>
       </div>

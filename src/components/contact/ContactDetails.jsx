@@ -36,7 +36,7 @@ const ContactDetails = () => {
 								{contact.icon}
 							</i>
 							<span className="text-lg mb-4 text-ternary-dark dark:text-ternary-light">
-								{contact.name}
+								<p>{contact.name}</p>
 							</span>
 						</li>
 					))}

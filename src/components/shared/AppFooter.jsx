@@ -3,7 +3,7 @@ import {
 	FiLinkedin,
 	FiGlobe,
 } from 'react-icons/fi';
-// import AppFooterCopyright from './AppFooterCopyright';
+import { motion } from 'framer-motion';
 import { useLanguage } from "../../translation/LanguageContext";
 import { translations } from "../../translation/translation";
 
@@ -27,14 +27,15 @@ const socialLinks = [
 
 const AppFooter = () => {
 	const { language } = useLanguage();
+	const MotionFooter = motion.footer;
 	return (
-		<div className="container mx-auto">
+		<MotionFooter className="container mx-auto">
 			<div className="pt-20 sm:pt-30 pb-8 mt-20 border-t-2 border-primary-light dark:border-secondary-dark">
 				{/* Footer social links */}
 				<div className="font-general-regular flex flex-col justify-center items-center mb-12 sm:mb-28">
-					<p className="text-3xl sm:text-4xl text-primary-dark dark:text-primary-light mb-5">
+					<h2 className="text-3xl sm:text-4xl text-primary-dark dark:text-primary-light mb-5">
 						{translations[language].footer.text}
-					</p>
+					</h2>
 					<ul className="flex gap-4 sm:gap-8">
 						{socialLinks.map((link) => (
 							<a
@@ -53,7 +54,7 @@ const AppFooter = () => {
 
 				{/* <AppFooterCopyright /> */}
 			</div>
-		</div>
+		</MotionFooter>
 	);
 };
 
