@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
-import { useLanguage } from "../../translation/LanguageContext";
 const ProjectSingle = ({ title, category, image, onClick }) => {
-  const { language } = useLanguage();
   return (
     <motion.div
       initial={{ opacity: 0 }}
