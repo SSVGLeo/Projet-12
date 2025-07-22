@@ -61,7 +61,7 @@ export const translations = {
     header: {
       project: "Projects",
       about: "About",
-      hire: "Hire me",
+      hire: "Contact",
     },
     footer: {
       text: "You can find me on:",
