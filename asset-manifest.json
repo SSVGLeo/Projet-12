@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/Projet-12/static/css/main.a7547553.css",
-    "main.js": "/Projet-12/static/js/main.df418cfa.js",
+    "main.css": "/Projet-12/static/css/main.3a97df4d.css",
+    "main.js": "/Projet-12/static/js/main.a8395ad6.js",
     "static/js/434.05bafea4.chunk.js": "/Projet-12/static/js/434.05bafea4.chunk.js",
     "static/js/5.d3c9f146.chunk.js": "/Projet-12/static/js/5.d3c9f146.chunk.js",
-    "static/js/312.1f3fec35.chunk.js": "/Projet-12/static/js/312.1f3fec35.chunk.js",
-    "static/js/90.982f364b.chunk.js": "/Projet-12/static/js/90.982f364b.chunk.js",
+    "static/js/312.90b132cf.chunk.js": "/Projet-12/static/js/312.90b132cf.chunk.js",
+    "static/js/90.f6bc5fa6.chunk.js": "/Projet-12/static/js/90.f6bc5fa6.chunk.js",
     "static/js/641.232053ec.chunk.js": "/Projet-12/static/js/641.232053ec.chunk.js",
     "static/js/453.560fda9e.chunk.js": "/Projet-12/static/js/453.560fda9e.chunk.js",
     "static/media/nina.png": "/Projet-12/static/media/nina.fa4e46711d9094bbe132.png",
@@ -75,17 +75,17 @@
     "static/media/javascript-logo-svgrepo-com.svg": "/Projet-12/static/media/javascript-logo-svgrepo-com.acc4642f682cd93a4c20a8a02c0cfa21.svg",
     "static/media/HTML5_logo_and_wordmark.svg": "/Projet-12/static/media/HTML5_logo_and_wordmark.aff8a9cb398fc75e4f21dab1ba1e097e.svg",
     "static/media/React-icon.svg": "/Projet-12/static/media/React-icon.928f956d9c8ebcffb98a8e917154a81a.svg",
-    "main.a7547553.css.map": "/Projet-12/static/css/main.a7547553.css.map",
-    "main.df418cfa.js.map": "/Projet-12/static/js/main.df418cfa.js.map",
+    "main.3a97df4d.css.map": "/Projet-12/static/css/main.3a97df4d.css.map",
+    "main.a8395ad6.js.map": "/Projet-12/static/js/main.a8395ad6.js.map",
     "434.05bafea4.chunk.js.map": "/Projet-12/static/js/434.05bafea4.chunk.js.map",
     "5.d3c9f146.chunk.js.map": "/Projet-12/static/js/5.d3c9f146.chunk.js.map",
-    "312.1f3fec35.chunk.js.map": "/Projet-12/static/js/312.1f3fec35.chunk.js.map",
-    "90.982f364b.chunk.js.map": "/Projet-12/static/js/90.982f364b.chunk.js.map",
+    "312.90b132cf.chunk.js.map": "/Projet-12/static/js/312.90b132cf.chunk.js.map",
+    "90.f6bc5fa6.chunk.js.map": "/Projet-12/static/js/90.f6bc5fa6.chunk.js.map",
     "641.232053ec.chunk.js.map": "/Projet-12/static/js/641.232053ec.chunk.js.map",
     "453.560fda9e.chunk.js.map": "/Projet-12/static/js/453.560fda9e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7547553.css",
-    "static/js/main.df418cfa.js"
+    "static/css/main.3a97df4d.css",
+    "static/js/main.a8395ad6.js"
   ]
 }
